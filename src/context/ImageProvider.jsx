@@ -13,9 +13,9 @@ export const ImageProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [moreData, setMoreData] = useState(true);
   const [search, setSearch] = useState("");
+  const [inp, setInp] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const index = useRef(1);
-  const inputRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,18 +63,21 @@ export const ImageProvider = ({ children }) => {
 
     fetchData();
   };
+
   const handleClose = () => setIsOpen(false);
 
-  const HandleSearch = () => {
+  const handleSearch = () => {
     index.current = 1;
     setMoreData(true);
     setData([]);
   };
-
-  const handleKeyDown = (e) => {
+  const handleChange = (e) => {
+    setInp(e.target.value);
+  };
+  const handleSend = (e) => {
     if (e.key === "Enter") {
-      setSearch(inputRef.current.value);
-      HandleSearch();
+      setSearch(inp);
+      handleSearch();
       setIsOpen(false);
     }
   };
@@ -85,14 +88,14 @@ export const ImageProvider = ({ children }) => {
         data,
         MoreImage,
         moreData,
-        HandleSearch,
+        handleSearch,
         search,
         setSearch,
-        handleKeyDown,
-        inputRef,
+        handleSend,
         isOpen,
         handleClose,
         setIsOpen,
+        handleChange,
       }}
     >
       {children}

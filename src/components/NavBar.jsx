@@ -2,11 +2,9 @@ import { Avatar } from "flowbite-react";
 import { FaPinterest } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
 import { IoMdNotifications } from "react-icons/io";
-import { useImage } from "../context/ImageProvider";
+import { InputSearch } from "./InputSearch";
 
 export const NavBar = () => {
-  const { handleKeyDown, search, setSearch, inputRef } = useImage();
-
   return (
     <header className="py-2 px-8 hidden xl:flex items-center gap-4">
       <FaPinterest color="red" size={37} />
@@ -22,14 +20,7 @@ export const NavBar = () => {
         </a>
       </div>
       <div className="w-full">
-        <input
-          type="text"
-          placeholder="Search"
-          ref={inputRef}
-          defaultValue={search}
-          onKeyDown={handleKeyDown}
-          className="w-full border-none bg-slate-100 rounded-full outline-none focus:border-none focus:outline-none"
-        />
+        <InputSearch />
       </div>
       <div className="flex gap-2 items-center">
         <AiFillMessage
