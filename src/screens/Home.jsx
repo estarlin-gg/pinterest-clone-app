@@ -12,7 +12,12 @@ export const Home = () => {
       dataLength={data.length}
       hasMore={moreData}
       next={MoreImage}
-      loader={<Spinner className="mx-auto self-center" size={"xl"} />}
+      loader={
+        <Spinner
+          className="mx-auto flex justify-center items-center self-center"
+          size={"xl"}
+        />
+      }
       style={{ overflow: "none" }}
     >
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 6 }}>

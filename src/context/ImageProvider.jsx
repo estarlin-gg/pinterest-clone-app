@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, createContext, useContext } from "react";
 import { createApi } from "unsplash-js";
 
 const api = createApi({
-  accessKey: "rpcxET4p_B-U9wDM_NWtgZDmlYuNnUHUKikeW6kfzgk",
+  accessKey: import.meta.env.VITE_ACCESS_KEY,
 });
 
 const ImageContext = createContext();
