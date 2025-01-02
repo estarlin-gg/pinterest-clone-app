@@ -43,7 +43,7 @@ Asegúrate de tener **Node.js** y **npm** instalados en tu máquina. Puedes desc
     - Agrega tu clave de la API de Unsplash en el archivo `.env`:
 
       ```
-      REACT_APP_UNSPLASH_ACCESS_KEY=tu-clave-de-api
+      VITE_UNSPLASH_ACCESS_KEY=tu-clave-de-api
       ```
 
     Puedes obtener una clave de API registrándote en [Unsplash Developers](https://unsplash.com/developers).
@@ -51,7 +51,7 @@ Asegúrate de tener **Node.js** y **npm** instalados en tu máquina. Puedes desc
 4. Inicia la aplicación:
 
     ```bash
-    npm start
+    npm run dev
     ```
 
     Esto abrirá la aplicación en [http://localhost:3000](http://localhost:3000).
